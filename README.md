@@ -41,8 +41,8 @@ CoffeDream es una moderna plataforma de comercio electrónico especializada en l
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/coffeedream.git
-   cd coffeedream
+   git clone https://github.com/mtsprznto/CoffeDream.git
+   cd CoffeDream
    ```
 
 2. Instala las dependencias:
