@@ -28,8 +28,8 @@ export const LoveItemProducto = (props: LovedItemProductProps) => {
       
       <div className="flex justify-between flex-1 px-6">
         <div>
-          <h2 className="text-lg font-bold">{product.attributes.productName}</h2>
-          <p className="font-bold">{formatPrice(product.attributes.price)}</p>
+          <h2 className="text-lg font-bold">{product.productName}</h2>
+          <p className="font-bold">{formatPrice(product.price)}</p>
           <ProductTasteOrigin product={product}></ProductTasteOrigin>
           <Button className="mt-4 rounded-full cursor-pointer" onClick={addToCheckout}>
             Añadir al carrito

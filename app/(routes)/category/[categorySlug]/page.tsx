@@ -15,13 +15,9 @@ export default function Page() {
   const params = useParams();
 
   const { categorySlug } = params;
- 
-  
-  const { result, loading }: ResponseType = useGetCategoryProduct(
-    `${categorySlug}`
-  );
-  
 
+  const { result, loading }: ResponseType<ProductType[]> =
+    useGetCategoryProduct(`${categorySlug}`);
 
   const [filterOrigin, setFilterOrigin] = useState("");
   const [filterTaste, setFilterTaste] = useState("");
@@ -62,11 +58,12 @@ export default function Page() {
           {loading && <SkeletonSchema grid={3}></SkeletonSchema>}
           {result !== null &&
             !loading &&
+            Array.isArray(filteredProducts) &&
             filteredProducts.map((product: ProductType) => (
               <ProductoCard key={product.id} product={product}></ProductoCard>
             ))}
 
-          {filteredProducts !== null &&
+          {Array.isArray(filteredProducts) &&
             !loading &&
             filteredProducts.length === 0 && (
               <p className="">No hay productos con este filtro</p>

@@ -16,7 +16,7 @@ type ProductCardProps = {
 };
 export const ProductoCard = (props: ProductCardProps) => {
   const { product } = props;
-  console.log("PRODUCTO en PRODUCTOCARD",product);
+  
   
   const router = useRouter();
   return (
@@ -44,7 +44,7 @@ export const ProductoCard = (props: ProductCardProps) => {
               <Image
                 src={image ?? "/placeholder.jpg"}
                 alt={"images"}
-                className="rounded-xl"
+                className="rounded-xl w-screen md:w-80 md:h-80 object-cover"
                 width={400}
                 height={400}
               ></Image>
@@ -69,7 +69,7 @@ export const ProductoCard = (props: ProductCardProps) => {
           ))}
         </CarouselContent>
       </Carousel>
-      <p className="text-2xl text-center ">{product.productName}</p>
+      <p className="text-[12px] md:text-2xl text-center ">{product.productName}</p>
       <p className="font-bold text-center">{formatPrice(product.price)}</p>
     </Link>
   );

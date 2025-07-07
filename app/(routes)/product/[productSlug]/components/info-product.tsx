@@ -24,13 +24,13 @@ export const InfoProduct = (props: InfoProductsProps) => {
   return (
     <div className="px-6">
       <div className="justify-between mb-3 sm:flex">
-        <h1 className="text-2xl py-4">{product.attributes.productName}</h1>
+        <h1 className="text-2xl py-4">{product.productName}</h1>
         <ProductTasteOrigin product={product}></ProductTasteOrigin>
       </div>
       <Separator className="my-4"></Separator>
-      <p>{product.attributes.description}</p>
+      <p>{product.description}</p>
       <Separator className="my-4"></Separator>
-      <p className="my-4 text-2xl">{formatPrice(product.attributes.price)}</p>
+      <p className="my-4 text-2xl">{formatPrice(product.price)}</p>
       <div className="flex items-center gap-5">
         <Button className="cursor-pointer" onClick={() => addItem(product)}>
           Comprar

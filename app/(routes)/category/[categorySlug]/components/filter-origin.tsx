@@ -19,7 +19,7 @@ export const FilterOrigin = (props: FilterOriginProps) => {
       <RadioGroup onValueChange={(value) => setFilterOrigin(value)}>
         {result.origin.map((origin) => (
           <div key={origin.id} className="flex items-center space-x-2">
-            <RadioGroupItem value={origin.name} id={origin.id}></RadioGroupItem>
+            <RadioGroupItem value={origin.name} id={origin.name}></RadioGroupItem>
             <Label htmlFor={origin.name}>{origin.name}</Label>
           </div>
         ))}

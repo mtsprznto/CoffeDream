@@ -8,22 +8,22 @@ import {
 import { ProductType } from "@/types/productos";
 import Image from "next/image";
 
+type CarouselProductProps = {
+  product: ProductType;
+};
 
-
-export const CarouselProduct = (props: ProductType) => {
-  const { attributes } = props;
-  const images = attributes.images.data || [];
-  //console.log("IMAGES: ", attributes);
+export const CarouselProduct = ({ product }: CarouselProductProps) => {
+  const images = product.images ?? [];
 
   return (
     <div className="sm:px-16">
       <Carousel>
         <CarouselContent>
-          {images.map((image) => (
-            <CarouselItem key={image.id}>
+          {images.map((imageUrl, index) => (
+            <CarouselItem key={index}>
               <Image
-                src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${image.attributes.url}`}
-                alt={`Image ${image.id}`}
+                src={imageUrl ?? "/placeholder.jpg"}
+                alt={`Imagen de ${product.productName}`}
                 width={400}
                 height={400}
               ></Image>

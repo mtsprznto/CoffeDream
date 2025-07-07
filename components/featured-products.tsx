@@ -19,7 +19,7 @@ import { useCart } from "@/hooks/use-cart";
 import Image from "next/image";
 
 export const FeaturedProducts = () => {
-  const { loading, result }: ResponseType = useGetFeaturedProducts();
+  const { loading, result }: ResponseType<ProductType[]> = useGetFeaturedProducts();
 
   const router = useRouter();
   const { addItem } = useCart();
